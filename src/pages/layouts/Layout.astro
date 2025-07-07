@@ -1,12 +1,14 @@
 ---
-import { ClientRouter } from "astro:transitions";
-interface Props {
-  title: string;
+
+export interface Props {
+  title: String
 }
-const { title } = Astro.props;
+const {title} = Astro.props
+import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/navbar.astro";
-import CookieBlocker from "../components/CookieBlocker.jsx";
+import CookieBlocker from "../components/CookieBlocker.jsx"; // Importa el bloqueador de cookies
 import HomeFooter from "../components/HomeFooter.astro";
+import CookieBanner from "../components/CookieBanner.jsx"; // Importa el banner de cookies
 ---
 
 <html lang="en">
@@ -19,21 +21,20 @@ import HomeFooter from "../components/HomeFooter.astro";
     <title>{title}</title>
     <ClientRouter />
     <script src="/hamburger.js" type="module"></script>
-
   </head>
+  
   <body class="bg-white text-gray-900">
-    <Navbar/>
+    <Navbar />
 
-    <main class="">
-       <CookieBlocker client:load />
-      <slot />
-      
-    </main>
     
+
+    <main>
+      <CookieBlocker client:load />
+      <slot />
+    </main>
+
     <footer>
       <HomeFooter />
     </footer>
-      
-   
   </body>
 </html>
