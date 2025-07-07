@@ -1,5 +1,12 @@
 # Astro Starter Kit: Minimal
 
+
+https://flowbite.com/#components
+https://tailwindcss.com/docs/color
+
+
+
+
 ```sh
 bun create astro@latest -- --template minimal
 ```

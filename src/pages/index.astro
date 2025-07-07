@@ -1,16 +1,92 @@
 ---
-
+import Layout from "./layouts/Layout.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="home">
+  <div
+    class="relative h-screen bg-cover bg-center text-white"
+    style="background-image: url('/images/guitarpiano1.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 flex flex-col justify-center items-center h-full px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg">
+        Timeless Messengers
+      </h1>
+    </div>
+  </div>
+
+  <section class="bg-gray-100 py-16">
+    <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-md p-10">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+        You can find us at:
+      </h2>
+
+      <dl class="grid grid-cols-1 md:grid-cols-3 gap-11 text-gray-700">
+        <div class="space-y-6">
+          <div>
+            <dt class="flex items-center space-x-2 text-lg font-semibold text-gray-800">
+              <svg class="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 4a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2 .5l6 4 6-4v-.5H4v.5z"/>
+              </svg>
+              <span>Email</span>
+            </dt>
+            <dd>contact<span class="text-sm text-gray-500">(@)</span>timelessmessengers.com</dd>
+          </div>
+
+          <div>
+            <dt class="flex items-center space-x-2 text-lg font-semibold text-gray-800">
+              <svg class="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd"/>
+              </svg>
+              <span>Location</span>
+            </dt>
+            <dd>Maulbeerallee 3/1, 2231 Strasshof an der Nordbahn</dd>
+            <dd>A‑1020 Wien</dd>
+          </div>
+        </div>
+
+        <div></div> 
+
+        <div class="space-y-6">
+          <div>
+            <dt class="flex items-center space-x-2 text-lg font-semibold text-gray-800">
+              <svg class="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 2.5A1.5 1.5 0 013.5 1h13A1.5 1.5 0 0118 2.5v15a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 012 17.5v-15zM4 4v12h12V4H4zm2 2h8v2H6V6zm0 4h8v2H6v-2z"/>
+              </svg>
+              <span>Website</span>
+            </dt>
+            <dd>
+              <a href="https://timelessmessengers.com" class="text-sky-600 hover:underline">
+                timelessmessengers.com
+              </a>
+            </dd>
+          </div>
+
+          <div>
+            <dt class="flex items-center space-x-2 text-lg font-semibold text-gray-800">
+              <svg class="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 5a2 2 0 012-2h.5a1.5 1.5 0 110 3H4v11h12V6h-.5a1.5 1.5 0 110-3H16a2 2 0 012 2v11a2 2 0 01-2 2H4a2 2 0 01-2-2V5z"/>
+                <path d="M14 2a2 2 0 110 4h-4a2 2 0 110-4h4z"/>
+              </svg>
+              <span>Phone</span>
+            </dt>
+            <dd>+43 664 45 43 244</dd>
+          </div>
+
+          <div>
+            <dt class="flex items-center space-x-2 text-lg font-semibold text-gray-800">
+              <svg class="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 5h14a2 2 0 012 2v7a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2zm2 .5a.5.5 0 00-1 0v.5h1v-.5zM10 9.5a1 1 0 110 2 1 1 0 010-2zm4-1.5h-8v1h8v-1z" clip-rule="evenodd"/>
+              </svg>
+              <span>Impressum</span>
+            </dt>
+            <dd>Legal info available upon request.</dd>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </section>
+</Layout>
+

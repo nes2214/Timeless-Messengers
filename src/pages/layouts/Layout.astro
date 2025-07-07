@@ -1,0 +1,39 @@
+---
+import { ClientRouter } from "astro:transitions";
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+import Navbar from "../components/navbar.astro";
+import CookieBlocker from "../components/CookieBlocker.jsx";
+import HomeFooter from "../components/HomeFooter.astro";
+---
+
+<html lang="en">
+  <head>
+    <base href="/" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/fglogo_new.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ClientRouter />
+    <script src="/hamburger.js" type="module"></script>
+
+  </head>
+  <body class="bg-white text-gray-900">
+    <Navbar/>
+
+    <main class="">
+       <CookieBlocker client:load />
+      <slot />
+      
+    </main>
+    
+    <footer>
+      <HomeFooter />
+    </footer>
+      
+   
+  </body>
+</html>
