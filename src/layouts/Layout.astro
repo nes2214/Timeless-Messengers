@@ -8,7 +8,6 @@ import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/navbar.astro";
 import CookieBlocker from "../components/CookieBlocker.jsx"; // Importa el bloqueador de cookies
 import HomeFooter from "../components/HomeFooter.astro";
-import CookieBanner from "../components/CookieBanner.jsx"; // Importa el banner de cookies
 ---
 
 <html lang="en">
@@ -24,7 +23,7 @@ import CookieBanner from "../components/CookieBanner.jsx"; // Importa el banner 
   </head>
   
   <body class="bg-white text-gray-900">
-    <Navbar />
+    <Navbar client:load/>
 
     
 
