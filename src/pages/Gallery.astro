@@ -1,10 +1,11 @@
 ---
-import  Layout  from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
+import Galeria from '../components/galeria.astro';
+
 ---
 
-
-<Layout title="VideoAudio">
+<Layout title="Gallery">
   <div
     class="relative h-72 md:h-96 bg-cover bg-[position:50%_70%] text-white flex items-center"
     style="background-image: url('/images/newPicture1.webp');"
@@ -12,9 +13,10 @@ import '../styles/global.css';
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="relative z-10 px-6 text-left ">
       <h1 class="text-3xl pl-25 md:text-5xl font-bold tracking-wide drop-shadow-lg mb-2">
-        Gallery
+      Gallery
       </h1>
+      
     </div>
   </div>
-  
+  <Galeria ></Galeria>
 </Layout>
