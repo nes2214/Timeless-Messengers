@@ -1,64 +1,74 @@
 ---
 import "photoswipe/style.css"
-const gallery_images = [
-  
-]
+const gallery_images = []
 ---
-<div class="grid grid-cols-3 max-w-6xl gap-3 mx-auto py-20" id="gallery">
-{Array.from({ length: 4 }).map((_, i) => (
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl gap-3 mx-auto py-20" id="gallery">
+  {Array.from({ length: 4 }).map((_, i) => (
+    <a
+      class="group rounded-xl overflow-hidden hover:scale-105 
+             transition-all relative"
+      href={`/images/photoGallery${i + 1}.webp`}
+      data-pswp-width="1920"
+      data-pswp-height="1080"
+      target="_blank"
+    >
+      <img
+        src={`/images/photoGallery${i + 1}.webp`}
+        alt={`Gallery image ${i + 1}`}
+        class="w-full h-100 object-cover"
+        loading="lazy"
+      />
+    </a>
+  ))}
   <a
     class="group rounded-xl overflow-hidden hover:scale-105 
-            transition-all relative"
-    href={`/images/photoGallery${i + 1}.webp`}
-    data-pswp-width="1920"
-    data-pswp-height="1080"
+           transition-all relative"
+    href="/images/photoGallery3r.webp"
+    data-pswp-width="404"
+    data-pswp-height="581"
     target="_blank"
   >
-
-   
     <img
-      src={`/images/photoGallery${i + 1}.webp`}
-      alt={`Gallery image ${i + 1}`}
+      src="/images/photoGallery3r.webp"
+      alt="Photo gallery 3"
       class="w-full h-100 object-cover"
       loading="lazy"
     />
   </a>
-))}
-<a 
-  class="group rounded-xl overflow-hidden hover:scale-105 
-            transition-all relative"
-  href="/public/images/photoGallery3r.webp"
-  data-pswp-width="500"
-  data-pswp-height="600"
-  target="_blank"
+  <a
+    class="group rounded-xl overflow-hidden hover:scale-105 
+           transition-all relative"
+    href="/images/photoGallery4r.webp"
+    data-pswp-width="1980"
+    data-pswp-height="2931"
+    target="_blank"
   >
-  
-  <img src="/public/images/photoGallery3r.webp" 
-  alt=" Photo gallery 3"
-  class="w-full h-100 object-cover"
-  loading="lazy"
+    <img
+      src="/images/photoGallery4r.webp"
+      alt="Photo gallery 4"
+      class="w-full h-100 object-cover"
+      loading="lazy"
+    />
+  </a>
+    <a
+    class="group rounded-xl overflow-hidden hover:scale-105 
+           transition-all relative"
+    href="/images/photoGallery1r.webp"
+    data-pswp-width="751"
+    data-pswp-height="600"
+    target="_blank"
   >
-
-</a>
-<a 
-  class="group rounded-xl overflow-hidden hover:scale-105 
-            transition-all relative"
-  href="/public/images/photoGallery4r.webp"
-  data-pswp-width="500"
-  data-pswp-height="600"
-  target="_blank"
-  >
-  
-  <img src="/public/images/photoGallery4r.webp" 
-  alt=" Photo gallery 4"
-  class="w-full h-100 object-cover"
-  loading="lazy"
-  >
-
-</a>
+    <img
+      src="/images/photoGallery1r.webp"
+      alt="Photo gallery 1"
+      class="w-full h-100 object-cover"
+      loading="lazy"
+    />
+  </a>
 </div>
 
-<script >
+<script>
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 const lightbox = new PhotoSwipeLightbox({
   gallery: '#gallery',
