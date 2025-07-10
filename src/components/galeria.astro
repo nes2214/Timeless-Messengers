@@ -4,29 +4,72 @@ const gallery_images = []
 ---
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl gap-3 mx-auto py-20" id="gallery">
-  {Array.from({ length: 4 }).map((_, i) => (
-    <a
-      class="group rounded-xl overflow-hidden hover:scale-105 
-             transition-all relative"
-      href={`/images/photoGallery${i + 1}.webp`}
-      data-pswp-width="1920"
-      data-pswp-height="1080"
-      target="_blank"
-    >
-      <img
-        src={`/images/photoGallery${i + 1}.webp`}
-        alt={`Gallery image ${i + 1}`}
-        class="w-full h-100 object-cover"
-        loading="lazy"
-      />
-    </a>
-  ))}
+ <a
+    class="group rounded-xl overflow-hidden hover:scale-105 
+           transition-all relative"
+    href="/images/photoGallery1.webp"
+    data-pswp-width="9248"
+    data-pswp-height="6401"
+    target="_blank"
+  >
+    <img
+      src="/images/photoGallery1.webp"
+      alt="Photo gallery 1"
+      class="w-full h-100 object-cover"
+      loading="lazy"
+    />
+  </a>
+  <a
+    class="group rounded-xl overflow-hidden hover:scale-105 
+           transition-all relative"
+    href="/images/photoGallery2.webp"
+    data-pswp-width="2000"
+    data-pswp-height="1125"
+    target="_blank"
+  >
+    <img
+      src="/images/photoGallery2.webp"
+      alt="Photo gallery 2"
+      class="w-full h-100 object-cover"
+      loading="lazy"
+    />
+  </a>
+  <a
+    class="group rounded-xl overflow-hidden hover:scale-105 
+           transition-all relative"
+    href="/images/photoGallery3.webp"
+    data-pswp-width="1920"
+    data-pswp-height="1080"
+    target="_blank"
+  >
+    <img
+      src="/images/photoGallery3.webp"
+      alt="Photo gallery 3"
+      class="w-full h-100 object-cover"
+      loading="lazy"
+    />
+  </a>
   <a
     class="group rounded-xl overflow-hidden hover:scale-105 
            transition-all relative"
     href="/images/photoGallery3r.webp"
     data-pswp-width="404"
     data-pswp-height="581"
+    target="_blank"
+  >
+    <img
+      src="/images/photoGallery4.webp"
+      alt="Photo gallery 4"
+      class="w-full h-100 object-cover"
+      loading="lazy"
+    />
+  </a>
+  <a
+    class="group rounded-xl overflow-hidden hover:scale-105 
+           transition-all relative"
+    href="/images/photoGallery4.webp"
+    data-pswp-width="6081"
+    data-pswp-height="4001"
     target="_blank"
   >
     <img
@@ -54,14 +97,14 @@ const gallery_images = []
     <a
     class="group rounded-xl overflow-hidden hover:scale-105 
            transition-all relative"
-    href="/images/photoGallery1r.webp"
+    href="/images/photoGallery5r.webp"
     data-pswp-width="751"
     data-pswp-height="600"
     target="_blank"
   >
     <img
-      src="/images/photoGallery1r.webp"
-      alt="Photo gallery 1"
+      src="/images/photoGallery5r.webp"
+      alt="Photo gallery 5"
       class="w-full h-100 object-cover"
       loading="lazy"
     />
