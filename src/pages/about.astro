@@ -5,22 +5,20 @@ import "../styles/global.css";
 
 <Layout title="About">
   <div
-    class="relative h-72 md:h-96 bg-cover bg-top text-white flex items-center"
+    class="relative h-48 sm:h-64 md:h-96 bg-cover bg-top text-white flex items-center"
     style="background-image: url('/images/guitar1.webp');"
   >
-    <div class="absolute inset-0 bg-black/40"></div>
-    <div class="relative z-10 px-6 text-left">
-      <h1 class="text-3xl pl-25 md:text-5xl font-bold tracking-wide drop-shadow-lg mb-2">
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="relative z-10 px-2 sm:px-4 md:px-6 text-left w-full">
+      <h1 class="text-xl sm:text-3xl md:text-5xl font-bold tracking-wide drop-shadow-lg mb-2">
         About us
       </h1>
     </div>
   </div>
 
-  <!-- 👥 Sección de contenido: texto + imagen -->
   <section class="bg-white text-gray-800 py-16 px-6">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
       
-      <!-- Texto -->
       <div class="space-y-6 text-lg leading-relaxed">
         <p>
           We play timeless music that blends <span class="font-semibold text-gray-900">jazz, swing, chansons, ballads</span> and <span class="font-semibold text-gray-900">bossa nova</span> in both English and French. Our passion for acoustic sound and elegant harmonies creates a warm and nostalgic atmosphere.
@@ -39,7 +37,6 @@ import "../styles/global.css";
         </ul>
       </div>
 
-      <!-- Imagen -->
       <div class="flex justify-center md:justify-end">
         <img
           src="/images/JMG_Portrati202307A_lowRes.webp"
@@ -50,7 +47,7 @@ import "../styles/global.css";
     </div>
   </section>
 
-  <div class="w-full border-t border-gray-200 my-12"></div>
+  
 
 
 </Layout>

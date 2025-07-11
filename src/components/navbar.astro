@@ -4,8 +4,9 @@ const links = [
   { name: "Video/Audio", href: "/VideoAudio" },
   { name: "Gallery", href: "/Gallery" },
 ];
----
 
+const currentPath = Astro.url.pathname;
+---
 <nav class="bg-black shadow">
   <div class="px-4 sm:px-6 lg:px-8">
     <div class="flex items-center h-16 relative">
@@ -19,7 +20,11 @@ const links = [
             <li>
               <a
                 href={link.href}
-                class="text-white px-3 py-2 text-sm font-medium  duration-300 hover:text-transparent hover:bg-gradient-to-r hover:from-sky-400 hover:to-violet-400 hover:bg-clip-text"
+                class={`px-3 py-2 text-sm font-medium duration-300 
+                  ${currentPath === link.href 
+                    ? 'text-transparent bg-gradient-to-r from-sky-400 to-violet-400 bg-clip-text' 
+                    : 'text-white hover:text-transparent hover:bg-gradient-to-r hover:from-sky-400 hover:to-violet-400 hover:bg-clip-text'}
+                `}
               >
                 {link.name}
               </a>
@@ -54,7 +59,11 @@ const links = [
           <li>
             <a
               href={link.href}
-              class="text-white px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-transparent hover:bg-gradient-to-r hover:from-sky-400 hover:to-violet-400 hover:bg-clip-text"
+              class={`px-3 py-2 text-sm font-medium duration-300 
+                ${currentPath === link.href 
+                  ? 'text-transparent bg-gradient-to-r from-sky-400 to-violet-400 bg-clip-text' 
+                  : 'text-white hover:text-transparent hover:bg-gradient-to-r hover:from-sky-400 hover:to-violet-400 hover:bg-clip-text'}
+              `}
             >
               {link.name}
             </a>
@@ -64,5 +73,3 @@ const links = [
     </div>
   </div>
 </nav>
-
-
