@@ -3,7 +3,8 @@ import CookieBanner from "./CookieBanner.jsx";
 
 export default function CookieBlocker() {
   const [blocked, setBlocked] = useState(false);
-  const [showBanner, setShowBanner] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const cookies = document.cookie.split(";").map(c => c.trim().split("="));
@@ -13,7 +14,11 @@ export default function CookieBlocker() {
       setBlocked(true);
     } else if (cookieConsent === "accepted") {
       setShowBanner(false);
+    } else {
+      setShowBanner(true);
     }
+
+    setLoaded(true);
   }, []);
 
   const acceptCookies = () => {
@@ -27,6 +32,8 @@ export default function CookieBlocker() {
     setBlocked(true);
     setShowBanner(false);
   };
+
+  if (!loaded) return null;
 
   if (blocked) {
     return (
@@ -64,7 +71,7 @@ export default function CookieBlocker() {
           <button
             onClick={() => {
               setBlocked(false);
-              document.cookie = "cookieConsent=; path=/; max-age=0"; // Reconfigure cookies
+              document.cookie = "cookieConsent=; path=/; max-age=0";
               setShowBanner(true);
             }}
             style={{

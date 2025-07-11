@@ -7,15 +7,14 @@ import Galeria from '../components/galeria.astro';
 
 <Layout title="Gallery">
   <div
-    class="relative h-72 md:h-96 bg-cover bg-[position:50%_70%] text-white flex items-center"
+    class="relative h-48 sm:h-64 md:h-96 bg-cover bg-[position:50%_70%] text-white flex items-center"
     style="background-image: url('/images/newPicture1.webp');"
   >
     <div class="absolute inset-0 bg-black/40"></div>
-    <div class="relative z-10 px-6 text-left ">
-      <h1 class="text-3xl pl-25 md:text-5xl font-bold tracking-wide drop-shadow-lg mb-2">
-      Gallery
+    <div class="relative z-10 px-2 sm:px-4 md:px-6 text-left w-full">
+      <h1 class="text-xl sm:text-3xl md:text-5xl font-bold tracking-wide drop-shadow-lg mb-2">
+        Gallery
       </h1>
-      
     </div>
   </div>
   <Galeria ></Galeria>
