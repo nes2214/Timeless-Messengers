@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const videos = document.querySelectorAll('video');
   videos.forEach(video => {
     video.addEventListener('play', () => {

@@ -75,5 +75,17 @@ const image = "/images/photo3better.webp";
     </div>
   </section>
 
-  <script type="module" src="/scripts/pause-videos.js"></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+      video.addEventListener('play', () => {
+        videos.forEach(v => {
+          if (v !== video) v.pause();
+        });
+      });
+    });
+  });
+</script>
+
 </Layout>
