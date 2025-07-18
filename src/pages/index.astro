@@ -10,13 +10,12 @@ const image = "/images/fglogo_new.webp";
 
 <Layout {title} {description} {keywords} {image}>
   <div
-    class="relative h-screen bg-cover bg-center text-white"
-    style="background-image: url('/images/homePicture.webp');"
+    class="relative h-[60vh] sm:h-[80vh] md:h-screen bg-cover bg-center text-white flex items-center justify-center"
+    style="background-image: url('/images/FarAwayPhot.webp');"
   >
-    <div class="absolute inset-0 bg-black/20"></div>
-
-    <div class="relative z-10 flex flex-col justify-center items-center h-full px-6 text-center">
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg">
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="relative z-10 flex flex-col justify-center items-center w-full px-2 sm:px-6 text-center">
+      <h1 class="text-2xl sm:text-4xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg">
         Timeless Messengers
       </h1>
     </div>
@@ -85,9 +84,9 @@ const image = "/images/fglogo_new.webp";
               <svg class="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M3 5h14a2 2 0 012 2v7a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2zm2 .5a.5.5 0 00-1 0v.5h1v-.5zM10 9.5a1 1 0 110 2 1 1 0 010-2zm4-1.5h-8v1h8v-1z" clip-rule="evenodd"/>
               </svg>
-              <span>Impressum</span>
+              <span><a href="/Impressum">Impressum</a> </span>
             </dt>
-            <dd>Legal info available upon request.</dd>
+           
           </div>
         </div>
       </dl>
