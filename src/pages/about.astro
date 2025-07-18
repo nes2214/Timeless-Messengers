@@ -1,9 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
+
+const title = "About Us - Timeless Messengers";
+const description = "Discover Timeless Messengers: blending jazz, swing, chansons, ballads and bossa nova in English and French. Meet Jean-Michel Gillot, Wolfgang Deutsch and Nelly Gillot.";
+const keywords = "timeless messengers, about us, jazz, swing, chansons, ballads, bossa nova, acoustic music, Jean-Michel Gillot, Wolfgang Deutsch, Nelly Gillot";
+const image = "/images/JMG_Portrati202307A_lowRes.webp";
 ---
 
-<Layout title="About">
+<Layout {title} {description} {keywords} {image}>
   <div
     class="relative h-48 sm:h-64 md:h-96 bg-cover bg-top text-white flex items-center"
     style="background-image: url('/images/guitar1.webp');"
@@ -46,8 +51,4 @@ import "../styles/global.css";
       </div>
     </div>
   </section>
-
-  
-
-
 </Layout>

@@ -1,37 +1,132 @@
 ---
+import { ClientRouter } from "astro:transitions";
+import Navbar from '../components/navbar.astro';
+import HomeFooter from '../components/HomeFooter.astro';
+import CookieBlocker from '../components/CookieBlocker.jsx';
+import '../styles/global.css';
 
 export interface Props {
-  title: String
+  title: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  includeDefaultSchemas?: boolean;
+  customSchemas?: any;
 }
-const {title} = Astro.props
-import { ClientRouter } from "astro:transitions";
-import Navbar from "../components/navbar.astro";
-import CookieBlocker from "../components/CookieBlocker.jsx"; 
-import HomeFooter from "../components/HomeFooter.astro";
+const {
+  title,
+  description = 'Timeless Messengers - Your portal to ancient wisdom and spiritual journeys.',
+  keywords = 'timeless messengers, spiritual journeys, ancient wisdom, meditation, mindfulness',
+  image = '/images/fglogo_new.webp',
+  includeDefaultSchemas = true,
+  customSchemas = null
+} = Astro.props;
+
+const url = Astro.url;
 ---
 
 <html lang="en">
   <head>
-    <base href="/" />
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/images/fglogo_new.webp" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Timeless Messengers" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/fglogo_new.webp" type="image/webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/fglogo_new.webp" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/fglogo_new.webp" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/fglogo_new.webp" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={`https://timelessmessengers.com${url.pathname}`} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`https://timelessmessengers.com${image}`} />
+    <meta property="og:url" content={`https://timelessmessengers.com${url.pathname}`} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`https://timelessmessengers.com${image}`} />
+
+    <!-- Google Analytics (opcional, pon tu ID si lo tienes) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8XGD0QYTR"></script>
+    <script is:inline>
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P8XGD0QYTR');
+      `}
+    </script>
+
+    {includeDefaultSchemas && (
+      <>
+        <script type="application/ld+json" is:inline>
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Timeless Messengers",
+            "url": "https://timelessmessengers.com/",
+            "description": description,
+            "publisher": {
+              "@type": "Organization",
+              "name": "Timeless Messengers",
+              "url": "https://timelessmessengers.com",
+              "logo": `https://timelessmessengers.com${image}`
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": `https://timelessmessengers.com/?s={search_term_string}`,
+              "query-input": "required name=search_term_string"
+            }
+          })}
+        </script>
+
+        <script type="application/ld+json" is:inline>
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Timeless Messengers",
+            "url": "https://timelessmessengers.com/",
+            "logo": `https://timelessmessengers.com${image}`,
+            "sameAs": [
+              // Añade URLs de redes sociales oficiales aquí si tienes, ej:
+              "https://www.facebook.com/timelessmessengers",
+              "https://www.instagram.com/timelessmessengers",
+              "https://twitter.com/timelessmsgs"
+            ],
+            "description": description
+          })}
+        </script>
+      </>
+    )}
+
+    {customSchemas && (
+      <script type="application/ld+json" is:inline>
+        {JSON.stringify(customSchemas)}
+      </script>
+    )}
+
     <ClientRouter />
     <script src="/hamburger.js" type="module"></script>
   </head>
-  
+
   <body class="bg-white text-gray-900">
     <Navbar />
-
-    
-
     <main>
       <CookieBlocker client:load />
       <slot />
     </main>
-    
     <footer>
       <HomeFooter />
     </footer>

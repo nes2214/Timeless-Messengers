@@ -3,9 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 import Galeria from '../components/galeria.astro';
 
+const title = "Gallery - Timeless Messengers";
+const description = "Explore the Timeless Messengers gallery: captivating images and spiritual journeys captured through our lens.";
+const keywords = "timeless messengers, gallery, spiritual images, photography, journeys, art";
+const image = "/images/newPicture1.webp";
 ---
 
-<Layout title="Gallery">
+<Layout {title} {description} {keywords} {image}>
   <div
     class="relative h-48 sm:h-64 md:h-96 bg-cover bg-[position:50%_70%] text-white flex items-center"
     style="background-image: url('/images/newPicture1.webp');"
@@ -17,5 +21,5 @@ import Galeria from '../components/galeria.astro';
       </h1>
     </div>
   </div>
-  <Galeria ></Galeria>
+  <Galeria />
 </Layout>

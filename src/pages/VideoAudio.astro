@@ -33,9 +33,14 @@ const withPoster = files.map(file => {
   const hasPoster = fs.existsSync(absoluteThumb);
   return { file, poster: hasPoster ? thumbPath : null };
 });
+
+const title = "Video & Audio - Timeless Messengers";
+const description = "Discover the Video and Audio collection of Timeless Messengers: immersive spiritual journeys and captivating stories.";
+const keywords = "timeless messengers, video, audio, spiritual videos, audio stories, multimedia";
+const image = "/images/photo3better.webp";
 ---
 
-<Layout title="VideoAudio">
+<Layout {title} {description} {keywords} {image}>
   <div
     class="relative h-48 sm:h-64 md:h-96 bg-cover bg-[position:50%_20%] text-white flex items-center"
     style="background-image: url('/images/photo3better.webp');"

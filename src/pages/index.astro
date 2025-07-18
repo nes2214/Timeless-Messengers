@@ -1,9 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
+
+const title = "Timeless Messengers";
+const description = "Timeless Messengers - Your portal to ancient wisdom and spiritual journeys. Contact us, visit our location, or explore our website.";
+const keywords = "timeless messengers, spiritual journeys, ancient wisdom, meditation, mindfulness, contact, location, website";
+const image = "/images/fglogo_new.webp";
 ---
 
-<Layout title="Timeless Messengers">
+<Layout {title} {description} {keywords} {image}>
   <div
     class="relative h-screen bg-cover bg-center text-white"
     style="background-image: url('/images/homePicture.webp');"
@@ -47,7 +52,7 @@ import "../styles/global.css";
           </div>
         </div>
 
-        <div></div> 
+        <div></div>
 
         <div class="space-y-6">
           <div>
@@ -58,7 +63,7 @@ import "../styles/global.css";
               <span>Website</span>
             </dt>
             <dd>
-              <a href="https://timelessmessengers.com" class="text-sky-600 hover:underline">
+              <a href="https://timelessmessengers.com" class="text-sky-600 hover:underline" target="_blank" rel="noopener noreferrer">
                 timelessmessengers.com
               </a>
             </dd>
@@ -89,4 +94,3 @@ import "../styles/global.css";
     </div>
   </section>
 </Layout>
-
