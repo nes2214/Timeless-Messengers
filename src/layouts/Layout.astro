@@ -13,6 +13,7 @@ export interface Props {
   includeDefaultSchemas?: boolean;
   customSchemas?: any;
 }
+
 const {
   title,
   description = 'Timeless Messengers - Your portal to ancient wisdom and spiritual journeys.',
@@ -36,29 +37,24 @@ const url = Astro.url;
     <meta name="author" content="Timeless Messengers" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Favicon -->
     <link rel="icon" href="/images/fglogo_new.webp" type="image/webp" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/fglogo_new.webp" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/fglogo_new.webp" />
     <link rel="icon" type="image/png" sizes="16x16" href="/images/fglogo_new.webp" />
 
-    <!-- Canonical URL -->
     <link rel="canonical" href={`https://timelessmessengers.com${url.pathname}`} />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`https://timelessmessengers.com${image}`} />
     <meta property="og:url" content={`https://timelessmessengers.com${url.pathname}`} />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`https://timelessmessengers.com${image}`} />
 
-    <!-- Google Analytics (opcional, pon tu ID si lo tienes) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8XGD0QYTR"></script>
     <script is:inline>
       {`
@@ -82,11 +78,14 @@ const url = Astro.url;
               "@type": "Organization",
               "name": "Timeless Messengers",
               "url": "https://timelessmessengers.com",
-              "logo": `https://timelessmessengers.com${image}`
+              "logo": {
+                "@type": "ImageObject",
+                "url": `https://timelessmessengers.com${image}`
+              }
             },
             "potentialAction": {
               "@type": "SearchAction",
-              "target": `https://timelessmessengers.com/?s={search_term_string}`,
+              "target": "https://timelessmessengers.com/?s={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           })}
@@ -98,9 +97,11 @@ const url = Astro.url;
             "@type": "Organization",
             "name": "Timeless Messengers",
             "url": "https://timelessmessengers.com/",
-            "logo": `https://timelessmessengers.com${image}`,
+            "logo": {
+              "@type": "ImageObject",
+              "url": `https://timelessmessengers.com${image}`
+            },
             "sameAs": [
-              // Añade URLs de redes sociales oficiales aquí si tienes, ej:
               "https://www.facebook.com/timelessmessengers",
               "https://www.instagram.com/timelessmessengers",
               "https://twitter.com/timelessmsgs"
